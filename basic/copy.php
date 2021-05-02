@@ -3,6 +3,11 @@ require_once('funccopy.php');
 $data = array();
 $id = filter_input(INPUT_POST,'id');
 $name = filter_input(INPUT_POST,'name');
+/*
+db構造
+php->users->id,name,allergy,kcal
+
+*/
 $sql = "SELECT * FROM `users` WHERE `id` LIKE '%$id%'";
 $sql = "SELECT * FROM `users` WHERE `name` LIKE '%$name%'";//二重検索のやり方を求む
 $data = allList($host,$username,$passwd,$dbname,$sql);
